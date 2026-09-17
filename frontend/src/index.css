@@ -1,0 +1,181 @@
+@font-face {
+  font-family: 'Graphik';
+  src: url('./assets/fonts/Graphik-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Graphik';
+  src: url('./assets/fonts/Graphik-ThinItalic.woff2') format('woff2');
+  font-weight: 100;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Graphik';
+  src: url('./assets/fonts/Graphik-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Graphik';
+  src: url('./assets/fonts/Graphik-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Graphik';
+  src: url('./assets/fonts/Graphik-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Graphik';
+  src: url('./assets/fonts/Graphik-ExtralightItalic.woff2') format('woff2');
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Graphik';
+  src: url('./assets/fonts/Graphik-BlackItalic.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Graphik';
+  src: url('./assets/fonts/Graphik-RegularItalic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Graphik';
+  src: url('./assets/fonts/Graphik-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Graphik';
+  src: url('./assets/fonts/Graphik-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Graphik';
+  src: url('./assets/fonts/Graphik-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Graphik';
+  src: url('./assets/fonts/Graphik-BoldItalic.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Graphik';
+  src: url('./assets/fonts/Graphik-SemiboldItalic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Graphik';
+  src: url('./assets/fonts/Graphik-LightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Graphik';
+  src: url('./assets/fonts/Graphik-Extralight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Graphik';
+  src: url('./assets/fonts/Graphik-MediumItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+}
+/* Gabarito Font */
+@font-face {
+  font-family: 'Gabarito';
+  src: url('./assets/fonts/Gabarito-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gabarito';
+  src: url('./assets/fonts/Gabarito-ExtraBold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gabarito';
+  src: url('./assets/fonts/Gabarito-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gabarito';
+  src: url('./assets/fonts/Gabarito-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gabarito';
+  src: url('./assets/fonts/Gabarito-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gabarito';
+  src: url('./assets/fonts/Gabarito-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: Graphik !important;
+}
+
+a, a:visited, a:link, a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family:
+    'Graphik',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}

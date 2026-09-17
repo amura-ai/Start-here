@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amura</title>
+    <script>
+      // === Suppress Vite dev-client auto-reload ====================
+      // The Emergent ingress closes the HMR WebSocket after ~60s.
+      // Vite's @vite/client then enters "Polling for restart..." mode
+      // and fetches `__vite_ping`; once that fetch succeeds, the
+      // client calls location.reload(), which makes the page appear
+      // to refresh by itself every minute.
+      //
+      // We neutralise this in TWO layers so it works regardless of
+      // which Vite version / property descriptor is in play:
+      //   1. Make `__vite_ping` always reject — the polling loop
+      //      keeps going without ever triggering the reload branch.
+      //   2. No-op `location.reload()` as a belt-and-braces fallback.
+      //
+      // Real browser refresh (F5 / Ctrl+R / address bar) is untouched.
+      // ============================================================
+      (function () {
+        try {
+          var nativeFetch = window.fetch.bind(window);
+          window.fetch = function (input, init) {
+            try {
+              var url =
+                typeof input === 'string'
+                  ? input
+                  : input && input.url
+                    ? input.url
+                    : '';
+              var accept =
+                (init && init.headers && init.headers['Accept']) || '';
+              if (
+                url.indexOf('__vite_ping') !== -1 ||
+                accept === 'text/x-vite-ping'
+              ) {
+                console.warn('[suppressed] vite ping');
+                return Promise.reject(new Error('vite-ping-suppressed'));
+              }
+            } catch (e) {}
+            return nativeFetch(input, init);
+          };
+        } catch (e) {
+          console.warn('fetch patch failed', e);
+        }
+
+        try {
+          var noop = function () {
+            console.warn('[suppressed] location.reload()');
+          };
+          try {
+            window.location.reload = noop;
+          } catch (e1) {}
+          try {
+            Object.defineProperty(window.location, 'reload', {
+              configurable: true,
+              writable: true,
+              value: noop,
+            });
+          } catch (e2) {}
+          try {
+            Object.defineProperty(Location.prototype, 'reload', {
+              configurable: true,
+              writable: true,
+              value: noop,
+            });
+          } catch (e3) {}
+        } catch (e) {
+          console.warn('reload patch failed', e);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Polyfill for aws-amplify in Vite
+      if (typeof global === 'undefined') {
+        window.global = window;
+      }
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

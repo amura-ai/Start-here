@@ -1,0 +1,50 @@
+{
+  "name": "amura-auth-service",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=18",
+    "npm": ">=8"
+  },
+  "scripts": {
+    "start": "dotenv -e .env.qa -- vite",
+    "start-local": "dotenv -e .env.qa -- vite --host --port 3003",
+    "start-dev": "dotenv -e .env.dev -- vite --host --port 3003",
+    "start-qa": "dotenv -e .env.qa -- vite --host --port 3003",
+    "start-amura": "dotenv -e .env.amura -- vite --host --port 3003",
+    "build-dev": "dotenv -e .env.dev -- vite build",
+    "build-qa": "dotenv -e .env.qa -- vite build",
+    "build-amura": "dotenv -e .env.amura -- vite build",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/material": "^5.11.6",
+    "@types/crypto-js": "^4.2.2",
+    "aws-amplify": "5.0.11",
+    "axios": "^1.6.0",
+    "crypto-js": "^4.1.1",
+    "date-fns": "^2.29.3",
+    "dotenv-cli": "^7.0.0",
+    "hybrid-crypto-js": "^0.2.4",
+    "mui-tel-input": "^6.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.0",
+    "tss-react": "^4.9.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react-swc": "^3.6.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.0",
+    "typescript": "^5.8.3",
+    "vite": "^5.4.0",
+    "vite-tsconfig-paths": "^4.3.0"
+  }
+}
